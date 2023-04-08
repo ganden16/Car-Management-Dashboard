@@ -1,0 +1,63 @@
+<div class="container">
+	<div id="notification" class="d-flex justify-content-center bg-danger mt-3">
+		<% if (notif == 'delete') { %>
+			<div id="notification-delete" class="alert alert-dismissible fade show text-white text-center position-absolute" role="alert">
+				<%= msg %>
+				<button type="button" id="closeButtonNotif" class="btn-close btn-close-white d-none" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+		<% }else if(notif == 'save'){ %>
+		<div id="notification-add" class="alert alert-dismissible fade show text-white text-center position-absolute" role="alert">
+			<%= msg %>
+			<button type="button" id="closeButtonNotif" class="btn-close btn-close-white d-none" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+		<% } %>
+	</div>
+	<div class="row mb-5 mb-sm-0" style="height: 40vh;">
+		<div class="col-sm-10">
+			<div class="my-4 mx-3">
+				<a href="#" class="fw-bolder d-inline text-decoration-none text-dark">Cars</a>
+				<img src="./images/icon/fi_arrow-right.svg" class="d-inline">
+				<a href="#"class="d-inline opacity-75 text-decoration-none text-dark">List Car</a>
+			</div>
+			<div class="mb-4 mx-3">
+				<h1 class="fw-bold">List Car</h1>
+			</div>
+			<div class="mx-3">
+				<a href="/" class="btn fw-bolder py-3 px-4 me-3 <%= !size ? 'btn-secondary' : 'btn-light btn-outline-secondary' %>" >All</a>
+				<a href="/?size=small" class="btn py-3 px-4 me-3 fw-bolder <%= size == 'small' ? 'btn-secondary' : 'btn-light btn-outline-secondary' %>">Small</a>
+				<a href="/?size=medium" class="btn py-3 px-4 me-3 fw-bolder <%= size == 'medium' ? 'btn-secondary' : 'btn-light btn-outline-secondary' %>" >Medium</a>
+				<a href="/?size=large" class="btn py-3 px-4 me-3 fw-bolder <%= size == 'large' ? 'btn-secondary' : 'btn-light btn-outline-secondary' %>" >Large</a>
+			</div>
+		</div>
+		<div class="col-sm-2 mt-3 d-grid align-items-center">
+			<a href="/add" class="btn btn-primary"><img src="images/icon/fi_plus.svg"> Add New Car</a>
+		</div>
+	</div>
+	<div class="row">
+		<% cars.forEach(car => { %>
+			<div id="row-col-content" class="col-sm-4 mb-4 scale-sm">
+				<div class="card py-4 shadow-lg rounded-3">
+					<div class="pb-5 px-4 d-flex justify-content-center">
+						<img src="<%= car.image %>" class="img-fluid rounded-2" style="width: 100%; height: 220px;">
+					</div>
+					<div class="card-body ms-2">
+						<div class="d-flex justify-content-between">
+							<p class="mb-3 text-capitalize"><%= car.name %> / <%= car.type %> / <%= car.transmission %></p>
+							<b class="text-capitalize text-opacity-75 <%= car.size == 'small' ? 'text-danger' : (car.size == 'medium' ? 'text-warning' : (car.size == 'large' ? 'text-success' : ''))  %>"><%= car.size %></b>
+						</div>
+						<h2 class="card-title fw-bolder mb-3">Rp <%= car.price %> / hari</h2>
+						<img class="d-inline" src="images/icon/fi_clock.svg">
+						<p class="opacity-75 d-inline">Updated at <%= car.updatedAt.toString().replace(`GMT+0700 (Waktu Indonesia Barat)`,'') %></p>
+						<div class="mt-5 pt-2 d-flex justify-content-center p-0">
+							<form id="formDeleteCar" class="d-none" action="/delete/<%= car.id %>?_method=DELETE" method="post">
+							</form>
+							<button onclick="handleSubmitDeleteCar()" class="btn w-100 btn-outline-danger py-3 px-4 me-3 fw-bolder"><img src="images/icon/fi_trash.svg"> Delete</button>
+							<a href="/edit/<%= car.id %>" class="btn w-100 btn-success py-3 px-4 fw-bolder"><img src="images/icon/fi_edit.svg"> Edit</a>
+						</div>
+					</div>
+				 </div>
+			</div>
+		<% }) %>
+	</div>
+</div>
+

@@ -1,0 +1,77 @@
+<div class="container">
+	<div class="row mb-2">
+		<div class="col-sm-10">
+			<div class="my-4">
+				<a href="#" class="fw-bold d-inline text-decoration-none text-dark">Cars</a>
+				<img src="/images/icon/fi_arrow-right.svg" class="d-inline">
+				<a href="/" class="d-inline fw-bold text-decoration-none text-dark">List Car</a>
+				<img src="/images/icon/fi_arrow-right.svg" class="d-inline">
+				<a href="#" class="d-inline opacity-75 text-decoration-none text-dark">Update Car Information</a>
+			</div>
+		</div>
+	</div>
+	<div class="row ps-4 pe-5 d-flex justify-content-center">
+		<div class="col-sm-10">
+			<h1 class="fw-bold mb-3">Update Car Information</h1>
+		</div>
+		<form id="formEditCar" action="/edit/<%= car.id %>?_method=PUT" enctype="multipart/form-data" method="post" class="bg-light ps-4 pt-4 pb-3 rounded-3 shadow-sm col-sm-10">
+			<div class="mb-3 row d-flex justify-content-center">
+				<label for="name" class="col-sm-2 col-form-label">Nama<span class="text-danger fw-semibold">*</span></label>
+				<div class="col-sm-7">
+				  <input type="text" class="form-control py-2 input" id="name" name="name" placeholder="Nama Mobil" value="<%= car.name %>" required>
+				  <p class="invalid-feedback m-0 p-0">tidak boleh kosong</p>
+				</div>
+			</div>
+			<div class="mb-3 row d-flex justify-content-center">
+				<label for="type" class="col-sm-2 col-form-label">Tipe<span class="text-danger fw-semibold">*</span></label>
+				<div class="col-sm-7">
+				  <input type="text" class="form-control py-2 input" id="type" name="type" placeholder="Tipe Mobil" value="<%= car.type %>" required>
+				  <p class="invalid-feedback m-0 p-0">tidak boleh kosong</p>
+				</div>
+			</div>
+			<div class="mb-3 row d-flex justify-content-center">
+				<label for="transmission" class="col-sm-2 col-form-label">Transmisi<span class="text-danger fw-semibold">*</span></label>
+				<div class="col-sm-7">
+					<select name="transmission" class="form-select text-secondary py-2 input" aria-label="Default select example" required>
+						<option class="text-dark" value="manual" <%= car.transmission == 'manual' && 'selected' %> >Manual</option>
+						<option class="text-dark" value="automatic" <%= car.transmission == 'automatic' && 'selected' %> >Automatic</option>
+						<option class="text-dark" value="automanual" <%= car.transmission == 'automanual' && 'selected' %> >Automanual</option>
+						<option class="text-dark" value="cvt" <%= car.transmission == 'cvt' && 'selected' %> >CVT</option>
+					 </select>
+					 <p class="invalid-feedback m-0 p-0">tidak boleh kosong</p>
+				</div>
+			</div>
+			<div class="mb-3 row d-flex justify-content-center">
+				<label for="price" class="col-sm-2 col-form-label">Sewa Per Hari<span class="text-danger fw-semibold">*</span></label>
+				<div class="col-sm-7">
+				  <input type="text" class="form-control py-2 input" id="price" name="price" placeholder="Rp 0,-" value="<%= car.price %>" required>
+				  <p class="invalid-feedback m-0 p-0">tidak boleh kosong</p>
+				</div>
+			 </div>
+			<div class="mb-3 row d-flex justify-content-center">
+				<label for="inputPassword" class="col-sm-2 col-form-label">Ukuran<span class="text-danger fw-semibold">*</span></label>
+				<div class="col-sm-7">
+					<select name="size" class="form-select text-secondary py-2 input" aria-label="Default select example" required>
+						<option class="text-dark" value="small" <%= car.size == 'small' && 'selected' %> >Kecil</option>
+						<option class="text-dark" value="medium" <%= car.size == 'medium' && 'selected' %> >Sedang</option>
+						<option class="text-dark" value="large" <%= car.size == 'large' && 'selected' %> >Besar</option>
+					 </select>
+					 <p class="invalid-feedback m-0 p-0">tidak boleh kosong</p>
+				</div>
+			 </div>
+			 <div class="mb-3 row d-flex justify-content-center">
+				<label for="image" class="col-sm-2 col-form-label">Foto<span class="text-danger fw-semibold">*</span></label>
+				<div class="col-sm-7">
+				  <input type="file" class="form-control py-2 d-none" id="file" name="image">
+				  <input type="text" onclick="clickInputFormFile()" class="form-control py-2" id="fileInput" placeholder="https://placeimg.com/640/480/any" value="<%= car.image %>">
+				</div>
+			 </div>
+		</form>
+	</div>
+	<div class="row mt-4 d-flex justify-content-center">
+		<div class="col-sm-10 ps-3">
+			<a href="/" class="btn btn-outline-primary" style="font-weight: 600;">Cancel</a>
+			<button type="submit" onclick="handleSubmitEditCar()" class="btn btn-light text-white fw-bolder" style="background-color: rgb(184, 184, 184);">Save</button>
+		</div>
+	</div>
+</div>

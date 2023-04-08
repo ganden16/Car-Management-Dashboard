@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&display=swap');
+/* @import "reset.css"; */
+
+* {
+	padding: 0;
+	margin: 0;
+	font-size: 14px;
+	font-family: 'IBM Plex Sans', sans-serif;
+
+}
+
+body {
+	overflow-x: hidden;
+	font-family: 'IBM Plex Sans', sans-serif;
+	background-color: #e4e4e4;
+}
+
+h1 {
+	font-size: 20px;
+}
+
+h2 {
+	font-size: 16px;
+}
+
+.text-small {
+	font-size: 12px;
+}
+
+.bg-light {
+	background-color: #FFFFFF;
+}
+
+.bg-blue {
+	background-color: #0D28A6;
+}
+
+.bg-gray {
+	background-color: #CFD4ED;
+}
+
+.bg-green {
+	background-color: #5CB85F;
+}
+
+.text-light {
+	color: #FFFFFF;
+}
+
+.text-danger {
+	color: #FA2C5A;
+}
+
+.btn-secondary,
+.btn-outline-secondary:hover,
+.btn-secondary:hover {
+	background-color: #CFD4ED;
+	color: #0D28A6
+}
+
+.btn-success {
+	background-color: #5CB85F;
+	border-color: #5CB85F;
+}
+
+.btn-light {
+	background-color: #FFFFFF;
+	border-color: #CFD4ED;
+	border-width: 2px;
+}
+
+.btn-primary {
+	background-color: #0D28A6;
+}
+
+.scale:hover {
+	cursor: pointer;
+	transform: scale(1.05);
+}
+
+.scale-lg:hover {
+	cursor: pointer;
+	transform: scale(2);
+}
+
+.scale-sm:hover {
+	cursor: pointer;
+	transform: scale(1.01);
+}
+
+.size-medium {
+	width: 35px;
+	height: 35px;
+}
+
+.size-large {
+	width: 45px;
+	height: 45px;
+}
+
+.size-small {
+	width: 25px;
+	height: 25px;
+}
+
+.fi-search {
+	background-image: url('../images/icon/fi_search.svg');
+	background-repeat: no-repeat;
+	background-size: 20px;
+	background-position: left;
+	background-position-x: 6%;
+}
+
+.bg-active {
+	background-color: #cfd4ed64;
+}
+
+#side-nav ul li:hover {
+	background: #cfd4ed64;
+	cursor: pointer;
+}
+
+::-webkit-file-upload-button {
+	display: none;
+}
+
+input[id="fileInput"] {
+	background-image: url('../images/icon/fi_upload.svg');
+	background-repeat: no-repeat;
+	background-size: 20px;
+	background-position: right;
+	background-position-x: 95%;
+	cursor: pointer;
+}
+
+#notification-add{
+	background-color: #73CA5C;
+	width: 40vmax;
+	font-weight: 500;
+}
+#notification-delete{
+	background-color: #151515;
+	width: 40vmax;
+	font-weight: 500;
+}

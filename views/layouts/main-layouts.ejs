@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title><%= title %> | Binar Car Rent</title>
+	<link rel="stylesheet" href="/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+	<div id="focus-alert-confirm"></div>
+	<div class="row">
+		<div id="sidebar" class="col-2 col-sm-1 bg-blue shadow-sm pe-0" style="height: 100vh;">
+			<ul type="none" class="mt-4 p-0">
+				<li class="d-flex mb-4 flex-column align-items-center">
+					<div class="bg-gray scale size-small rounded-1"></div>
+				</li>
+				<li class="pt-3 pb-1 ">
+					<div class="d-flex scale flex-column align-items-center">
+						<img class="size-small" src="/images/icon/fi_home.svg" alt="dashboard">
+						<p class="text-white">Dashboard</p>
+					</div>
+				</li>
+				<li class="bg-active pt-3 pb-1">
+					<div class="d-flex scale flex-column align-items-center">
+						<img class="size-small" src="/images/icon/fi_truck.svg" alt="cars">
+						<p class="text-white">Cars</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="col-10 col-sm-11">
+			<div class="row bg-light rounded-2 shadow mb-1">
+				<nav class="py-3">
+					<div class="row d-flex justify-content-between">
+						<div class="col-4 col-sm-7 d-flex">
+							<button id="btn-gray" class="btn btn-secondary border-0 scale ms-sm-4 me-sm-5 rounded-1 my-auto me-3 d-none d-sm-block" style="width: 100px;height: 34px;"></button>
+							<img id="toggle-side-nav" onclick="handleSideNav()" class="scale size-medium my-auto ms-sm-5" src="/images/icon/fi_menu.svg" alt="menu">
+						</div>
+						<div class="col-8 col-sm-3 d-flex">
+							<form id="searchForm" action="/" class="d-flex">
+								<input class="form-control fi-search ps-5 shadow-none rounded-1" name="search" placeholder="Search">
+								<button class="btn btn-outline-secondary text-primary rounded-1" >Search</button>
+							</form>
+						</div>
+						<div class="col col-sm-2 d-sm-flex d-none g-0">
+							<img class="size-large my-auto me-2" src="/images/avatar/avatar.png" alt="">
+							<a class="my-auto text-decoration-none text-dark" href="#">
+								<p class="d-inline">Alvin Ardi</p>
+								<img class="size-icon my-auto" src="/images/icon/fi_arrow-down.svg" alt="">
+							</a>
+						</div>
+					</div>
+				</nav>
+			</div>
+			<div class="row p-0">
+				<div id="side-nav" class="col-2 col-sm-2 bg-light g-0 shadow" style="height: 86.5vh;">
+					<ul type="none" class="p-0 pt-4">
+						<li class="ps-3 p-3 mb-2"><h2 class="text-secondary fw-bold">Cars</h2></li>
+						<li class="ps-3 py-3 bg-gray"><h2 class="fw-bold">List Cars</h2></li>
+					</ul>
+				</div>
+				<div id="col-content" class="col-10 col-sm-10">
+					<%- body %>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="/bootstrap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="/js/script.js"></script>
+
+</body>
+</html>
