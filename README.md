@@ -1,6 +1,6 @@
 # Binar Chapter 4 - Car Management Dashboard
 
-
+<br><br>
 
 ## Installation
 
@@ -30,7 +30,7 @@ d. for other scripts, please check the package.json file
 
 
 ## ERD
-[image](erd.png)
+[erd](erd.png)
 
 ## Endpoint
 
@@ -41,6 +41,8 @@ d. for other scripts, please check the package.json file
 #### 4. Add Car (POST) = http://base_url/add
 #### 5. Edit Car (PUT) = http://base_url/edit/:id
 #### 5. Delete Car (DELETE) = http://base_url/delete/:id
+
+<br>
 
 ### Api
 #### 1. Get All Cars (GET) = http://base_url/api/car
