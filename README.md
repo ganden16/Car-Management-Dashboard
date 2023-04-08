@@ -28,9 +28,12 @@ d. for other scripts, please check the package.json file
 
 #### 5. (Optional) Create an .env file by copy and rename file .env.example. Then fill in the port and node_env variable (by default both have values)
 
+<br>
 
 ## ERD
 [erd](erd.png)
+
+<br>
 
 ## Endpoint
 
