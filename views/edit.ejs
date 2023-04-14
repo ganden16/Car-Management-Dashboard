@@ -18,28 +18,28 @@
 			<div class="mb-3 row d-flex justify-content-center">
 				<label for="name" class="col-sm-2 col-form-label">Nama<span class="text-danger fw-semibold">*</span></label>
 				<div class="col-sm-7">
-				  <input type="text" class="form-control py-2 input" id="name" name="name" placeholder="Nama Mobil" value="<%= car.name %>" required>
+				  <input type="text" class="form-control py-2 input shadow-none" id="name" name="name" placeholder="Nama Mobil" value="<%= car.name %>" required>
 				  <p class="invalid-feedback m-0 p-0">tidak boleh kosong</p>
 				</div>
 			</div>
 			<div class="mb-3 row d-flex justify-content-center">
 				<label for="type" class="col-sm-2 col-form-label">Tipe<span class="text-danger fw-semibold">*</span></label>
 				<div class="col-sm-7">
-				  <input type="text" class="form-control py-2 input" id="type" name="type" placeholder="Tipe Mobil" value="<%= car.type %>" required>
+				  <input type="text" class="form-control py-2 input shadow-none" id="type" name="type" placeholder="Tipe Mobil" value="<%= car.type %>" required>
 				  <p class="invalid-feedback m-0 p-0">tidak boleh kosong</p>
 				</div>
 			</div>
 			<div class="mb-3 row d-flex justify-content-center">
 				<label for="price" class="col-sm-2 col-form-label">Sewa Per Hari<span class="text-danger fw-semibold">*</span></label>
 				<div class="col-sm-7">
-				  <input type="text" class="form-control py-2 input" id="price" name="price" placeholder="Rp 0,-" value="<%= car.price %>" required>
+				  <input type="text" class="form-control py-2 input shadow-none" id="price" name="price" placeholder="Rp 0,-" value="<%= car.price %>" required>
 				  <p class="invalid-feedback m-0 p-0">tidak boleh kosong</p>
 				</div>
 			 </div>
 			<div class="mb-3 row d-flex justify-content-center">
 				<label for="inputPassword" class="col-sm-2 col-form-label">Ukuran<span class="text-danger fw-semibold">*</span></label>
 				<div class="col-sm-7">
-					<select name="size" class="form-select text-secondary py-2 input" aria-label="Default select example" required>
+					<select name="size" class="form-select text-secondary py-2 input shadow-none" aria-label="Default select example" required>
 						<option class="text-dark" value="small" <%= car.size == 'small' && 'selected' %> >Kecil</option>
 						<option class="text-dark" value="medium" <%= car.size == 'medium' && 'selected' %> >Sedang</option>
 						<option class="text-dark" value="large" <%= car.size == 'large' && 'selected' %> >Besar</option>
@@ -50,8 +50,9 @@
 			 <div class="mb-3 row d-flex justify-content-center">
 				<label for="image" class="col-sm-2 col-form-label">Foto<span class="text-danger fw-semibold">*</span></label>
 				<div class="col-sm-7">
-				  <input type="file" class="form-control py-2 d-none" id="file" name="image">
-				  <input type="text" onclick="clickInputFormFile()" class="form-control py-2" id="fileInput" placeholder="https://placeimg.com/640/480/any" value="<%= car.image %>">
+				  <input type="file" class="form-control py-2 d-none shadow-none" id="file" name="image">
+				  <input type="text" onclick="clickInputFormFile()" class="form-control py-2 shadow-none" id="fileInput" placeholder="https://placeimg.com/640/480/any" value="<%= car.image %>">
+				  <span class="text-secondary opacity-75" style="font-size: 12px;">File size max. 2MB</span>
 				</div>
 			 </div>
 		</form>

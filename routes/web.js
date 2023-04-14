@@ -12,6 +12,4 @@ router.put('/edit/:id', uploadFile, editCar)
 router.delete('/delete/:id', deleteCar)
 
 
-
-
 module.exports = router

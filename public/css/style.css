@@ -52,16 +52,17 @@ h2 {
 }
 
 .btn-secondary,
+.btn-outline-secondary:hover,
 .btn-secondary:hover {
 	background-color: #CFD4ED;
 	color: #0D28A6;
-	border-width: 2px;
+	border-width: 1.7px;
 	border-color: #0D28A6;
 }
 
 .border-blue {
 	border-color: #0D28A6;
-	border-width: 2px;
+	border-width: 1.7px;
 }
 
 .btn-success {
