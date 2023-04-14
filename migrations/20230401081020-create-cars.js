@@ -21,9 +21,6 @@ module.exports = {
       size: {
         type: Sequelize.STRING
       },
-      transmission: {
-        type: Sequelize.STRING
-      },
       image: {
         type: Sequelize.STRING
       },

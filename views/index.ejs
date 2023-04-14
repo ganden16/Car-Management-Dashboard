@@ -23,14 +23,14 @@
 				<h1 class="fw-bold">List Car</h1>
 			</div>
 			<div class="mx-3">
-				<a href="/" class="btn fw-bolder py-3 px-4 me-3 <%= !size ? 'btn-secondary' : 'btn-light btn-outline-secondary' %>" >All</a>
+				<a href="/" class="btn fw-bolder py-3 px-4 me-3 <%= !size ? 'btn-secondary': 'btn-light btn-outline-secondary' %>" >All</a>
 				<a href="/?size=small" class="btn py-3 px-4 me-3 fw-bolder <%= size == 'small' ? 'btn-secondary' : 'btn-light btn-outline-secondary' %>">Small</a>
 				<a href="/?size=medium" class="btn py-3 px-4 me-3 fw-bolder <%= size == 'medium' ? 'btn-secondary' : 'btn-light btn-outline-secondary' %>" >Medium</a>
 				<a href="/?size=large" class="btn py-3 px-4 me-3 fw-bolder <%= size == 'large' ? 'btn-secondary' : 'btn-light btn-outline-secondary' %>" >Large</a>
 			</div>
 		</div>
 		<div class="col-sm-2 mt-3 d-grid align-items-center">
-			<a href="/add" class="btn btn-primary"><img src="images/icon/fi_plus.svg"> Add New Car</a>
+			<a href="/add" class="btn btn-primary"><img src="images/icon/fi_plus.svg" class="me-2"><span>Add New Car</span></a>
 		</div>
 	</div>
 	<div class="row">
@@ -38,14 +38,14 @@
 			<div id="row-col-content" class="col-sm-4 mb-4 scale-sm">
 				<div class="card py-4 shadow-lg rounded-3">
 					<div class="pb-3 px-4 d-flex justify-content-center">
-						<img src="<%= car.image %>" class="img-fluid rounded-2" style="width: 100%; height: 220px;">
+						<img src="<%= car.image %>" class="rounded-2 img-fluid" style="width: 100%; height: 220px;">
 					</div>
 					<div class="d-flex justify-content-end pe-4">
 						<b class="text-capitalize text-opacity-75 <%= car.size == 'small' ? 'text-danger' : (car.size == 'medium' ? 'text-warning' : (car.size == 'large' ? 'text-success' : ''))  %>"><%= car.size %></b>
 					</div>
 					<div class="card-body ms-2">
 						<div class="d-flex justify-content-between">
-							<p class="mb-3 text-capitalize"><%= car.name %> / <%= car.type %> / <%= car.transmission %></p>
+							<p class="mb-3 text-capitalize"><%= car.name %> / <%= car.type %></p>
 						</div>
 						<h2 class="card-title fw-bolder mb-3">Rp <%= car.price %> / hari</h2>
 						<img class="d-inline" src="images/icon/fi_clock.svg">
@@ -53,8 +53,8 @@
 						<div class="mt-5 pt-2 d-flex justify-content-center p-0">
 							<form id="formDeleteCar" class="d-none" action="/delete/<%= car.id %>?_method=DELETE" method="post">
 							</form>
-							<button onclick="handleSubmitDeleteCar()" class="btn w-100 btn-outline-danger py-3 px-4 me-3 fw-bolder"><img src="images/icon/fi_trash.svg"> Delete</button>
-							<a href="/edit/<%= car.id %>" class="btn w-100 btn-success py-3 px-4 fw-bolder"><img src="images/icon/fi_edit.svg"> Edit</a>
+							<button onclick="handleSubmitDeleteCar()" class="btn w-100 btn-outline-danger py-3 px-4 me-3 fw-bolder" style="border-radius:0"><img src="images/icon/fi_trash.svg" class="me-1"> <span>Delete</span></button>
+							<a href="/edit/<%= car.id %>" class="btn w-100 btn-success py-3 px-4 fw-bolder" style="border-radius:0"><img src="images/icon/fi_edit.svg" class="me-1"> <span>Edit</span></a>
 						</div>
 					</div>
 				 </div>

@@ -13,7 +13,6 @@ module.exports = {
 				"type": car.type,
 				"price": car.price,
 				"size": car.size,
-				"transmission": car.transmission.toLowerCase(),
 				"image": car.image,
 				"createdAt": new Date(),
 				"updatedAt": new Date()

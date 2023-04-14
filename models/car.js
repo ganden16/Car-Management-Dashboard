@@ -18,7 +18,6 @@ module.exports = (sequelize, DataTypes) => {
     price: DataTypes.INTEGER,
     image: DataTypes.STRING,
 	 size: DataTypes.STRING,
-	 transmission: DataTypes.STRING,
     createdAt: DataTypes.DATE,
     updatedAt: DataTypes.DATE
   }, {

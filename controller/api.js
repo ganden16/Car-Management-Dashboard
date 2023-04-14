@@ -14,7 +14,7 @@ const getAllCars = async (req, res) => {
 		cars = cars.filter(car => car.size == size)
 	}
 	if(search) {
-		cars = cars.filter(car => car.name.toLowerCase() == search.toLowerCase() || car.type.toLowerCase() == search.toLowerCase() || car.transmission.toLowerCase() == search.toLowerCase() || car.size.toLowerCase() == search.toLowerCase() || car.price <= search)
+		cars = cars.filter(car => car.name.toLowerCase() == search.toLowerCase() || car.type.toLowerCase() == search.toLowerCase() || car.size.toLowerCase() == search.toLowerCase() || car.price <= search)
 	}
 	if(cars) {
 		res.status(200).json({

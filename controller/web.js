@@ -25,7 +25,7 @@ const index = async (req, res) => {
 		title = `List ${capitalize(size)} Cars`
 	}
 	if(search) {
-		cars = cars.filter(car => car.name.toLowerCase() == search.toLowerCase() || car.type.toLowerCase() == search.toLowerCase() || car.transmission.toLowerCase() == search.toLowerCase() || car.size.toLowerCase() == search.toLowerCase() || car.price <= search)
+		cars = cars.filter(car => car.name.toLowerCase() == search.toLowerCase() || car.type.toLowerCase() == search.toLowerCase() || car.size.toLowerCase() == search.toLowerCase() || car.price <= search)
 		title = `List Search Cars`
 		cars
 	}
