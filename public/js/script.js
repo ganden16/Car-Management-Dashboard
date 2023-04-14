@@ -88,3 +88,15 @@ if(window.location.search.split('=')[0] == '?search') {
 setTimeout(() => {
 	document.getElementById('closeButtonNotif').click()
 }, 1500)
+
+
+//notification limit file size 
+if(window.location.search.includes('errorSizeFile')) {
+	Swal.fire({
+		icon: 'error',
+		title: 'Limit File Size...',
+		text: 'File terlalu besar, maksimal 2MB',
+	}).then(() => {
+		window.location.search = ''
+	})
+}
