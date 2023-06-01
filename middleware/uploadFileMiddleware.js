@@ -8,7 +8,21 @@ const storage = multer.diskStorage({
 		cb(null, Date.now().toString() + "-" + file.originalname);
 	},
 });
-const middleware = multer({storage, limits: {fileSize: 2 * 1024 * 1024}}).single("image")
+
+const fileFilter = (req, file, cb) => {
+	if(
+		file.mimetype == "image/png" ||
+		file.mimetype == "image/jpg" ||
+		file.mimetype == "image/jpeg" ||
+		file.mimetype == "image/svg"
+	) {
+		cb(null, true);
+	} else {
+		return cb(null, false)
+	}
+};
+
+const middleware = multer({storage, fileFilter, limits: {fileSize: 2 * 1024 * 1024}}).single("image")
 
 const uploadFileMiddleware = (req, res, next) => {
 	middleware(req, res, (err) => {
@@ -24,7 +38,8 @@ const uploadFileMiddleware = (req, res, next) => {
 					res.redirect(url + '?errorSizeFile')
 				}
 			}
-		} else {
+		}
+		else {
 			next()
 		}
 	})
